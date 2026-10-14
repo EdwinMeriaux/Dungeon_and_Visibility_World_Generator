@@ -1,0 +1,55 @@
+{
+  "dimension": 3,
+  "geometry": "polyhedral",
+  "family": "caverns",
+  "seed": 53,
+  "world_size": [
+    50,
+    50,
+    30
+  ],
+  "resolution": [
+    70,
+    70,
+    42
+  ],
+  "neighbors": 6,
+  "floors": 3,
+  "curve_tolerance": 0.025,
+  "max_attempts": 30,
+  "rooms": {
+    "count": 5,
+    "vertices": {
+      "distribution": "uniform_int",
+      "min": 5,
+      "max": 11
+    },
+    "width": 10.0,
+    "length": 10.0,
+    "height": 8.0
+  },
+  "corridors": {
+    "width": {
+      "distribution": "uniform",
+      "min": 5.0,
+      "max": 6.2
+    },
+    "loop_fraction": 0.4,
+    "minimum_achieved_width": 4.4
+  },
+  "constraints": {
+    "connected": true
+  },
+  "obstacles": [
+    {
+      "type": "pyramid",
+      "count": 4,
+      "radius": {
+        "distribution": "uniform",
+        "min": 0.45,
+        "max": 0.7
+      },
+      "placement": "room"
+    }
+  ]
+}

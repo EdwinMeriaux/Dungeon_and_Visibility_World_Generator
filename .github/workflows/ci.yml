@@ -1,0 +1,40 @@
+name: Generator and visibility tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      MPLBACKEND: Agg
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-lock.txt
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements-lock.txt
+      - name: Build visibility engine
+        run: cargo build --locked --release --manifest-path rust/visibility_engine/Cargo.toml
+      - name: Python tests
+        run: python -m pytest tests -q
+      - name: Rust tests
+        run: cargo test --locked --manifest-path rust/visibility_engine/Cargo.toml
+      - name: Fresh 2D generation and visibility
+        run: python scripts/run_pipeline.py --config configs/showcase/2d_polygonal_1.json --output outputs/2d --targets 64 --stage all
+      - name: Fresh 3D generation and visibility
+        run: python scripts/run_pipeline.py --config configs/distributions/3d_stable_elevations.json --output outputs/3d --targets 64 --stage all

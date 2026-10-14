@@ -1,0 +1,5 @@
+Unmodified snapshots of the existing repository layout generators.
+Original locations: non_orthogonal_worlds/generate.py and generate_arbitrary.py.
+Generation metadata records the SHA-256 hashes of these helpers.
+These copies keep generation independent of sibling project folders.
+No new license or claim of external authorship is assigned here.

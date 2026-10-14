@@ -1,0 +1,7 @@
+numpy>=1.26
+scipy>=1.11
+shapely==2.1.2
+matplotlib>=3.8
+Pillow>=10
+scikit-image>=0.24
+pytest>=8

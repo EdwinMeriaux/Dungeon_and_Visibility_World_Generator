@@ -1,0 +1,60 @@
+{
+  "dimension": 2,
+  "geometry": "curvilinear",
+  "family": "branches",
+  "seed": 53,
+  "world_size": [
+    50,
+    50
+  ],
+  "resolution": [
+    100,
+    100
+  ],
+  "neighbors": 4,
+  "floors": 3,
+  "curve_tolerance": 0.025,
+  "max_attempts": 30,
+  "rooms": {
+    "count": 10,
+    "vertices": {
+      "distribution": "uniform_int",
+      "min": 5,
+      "max": 11
+    }
+  },
+  "corridors": {
+    "width": {
+      "distribution": "uniform",
+      "min": 5.0,
+      "max": 6.2
+    },
+    "loop_fraction": 0.4,
+    "minimum_achieved_width": 3.8
+  },
+  "constraints": {
+    "connected": true
+  },
+  "obstacles": [
+    {
+      "type": "ellipse",
+      "count": 4,
+      "radius": {
+        "distribution": "uniform",
+        "min": 0.55,
+        "max": 1.05
+      },
+      "placement": "room"
+    },
+    {
+      "type": "rounded",
+      "count": 4,
+      "radius": {
+        "distribution": "uniform",
+        "min": 0.55,
+        "max": 1.05
+      },
+      "placement": "room"
+    }
+  ]
+}

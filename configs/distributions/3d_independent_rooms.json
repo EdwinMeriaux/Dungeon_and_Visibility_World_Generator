@@ -1,0 +1,125 @@
+{
+  "dimension": 3,
+  "geometry": "polyhedral",
+  "family": "scattered_rooms",
+  "seed": 204,
+  "world_size": [
+    50,
+    50,
+    30
+  ],
+  "resolution": [
+    50,
+    50,
+    30
+  ],
+  "neighbors": 6,
+  "max_attempts": 30,
+  "rooms": {
+    "count": [
+      7,
+      10
+    ],
+    "placement": {
+      "type": "independent",
+      "x": [
+        12,
+        38
+      ],
+      "y": {
+        "distribution": "truncated_normal",
+        "mean": 25,
+        "std": 7,
+        "min": 12,
+        "max": 38
+      },
+      "z": [
+        8,
+        22
+      ]
+    },
+    "width": [
+      8,
+      11
+    ],
+    "length": [
+      8,
+      12
+    ],
+    "vertices": [
+      5,
+      9
+    ],
+    "orientation": [
+      -30,
+      30
+    ],
+    "radial_factor": [
+      0.75,
+      1
+    ],
+    "height": [
+      6,
+      8
+    ]
+  },
+  "layout": {
+    "fit_mode": "none",
+    "parameters": {
+      "paths.bend_fraction": [
+        -0.12,
+        0.12
+      ],
+      "paths.width_multiplier": [
+        0.9,
+        1.1
+      ],
+      "paths.smooth": 0,
+      "graph.weight_multiplier": [
+        0.8,
+        1.2
+      ]
+    }
+  },
+  "corridors": {
+    "width": [
+      4.8,
+      5.5
+    ],
+    "path_width": [
+      4.8,
+      5.5
+    ],
+    "minimum_achieved_width": 4.5,
+    "loop_fraction": [
+      0.1,
+      0.4
+    ]
+  },
+  "obstacles": [
+    {
+      "type": "pyramid",
+      "count": 1,
+      "radius": [
+        0.4,
+        0.55
+      ],
+      "placement": "room",
+      "clearance": [
+        0.4,
+        0.6
+      ],
+      "corridor_clearance": [
+        0.12,
+        0.2
+      ],
+      "obstacle_clearance": [
+        0.25,
+        0.4
+      ]
+    }
+  ],
+  "constraints": {
+    "connected": true
+  }
+}

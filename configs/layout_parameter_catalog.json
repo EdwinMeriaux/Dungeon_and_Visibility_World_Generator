@@ -1,0 +1,158 @@
+{
+  "model": "distribution_configurable_v1",
+  "activation": "Set layout or rooms.placement in the configuration",
+  "scalar_laws": "fixed value, [min,max] uniform range, or a named distribution object",
+  "parameters": {
+    "template": [
+      "template.radius",
+      "template.vertices",
+      "template.phase",
+      "template.angle_jitter",
+      "template.radial_factor",
+      "template.aspect",
+      "template.rotation"
+    ],
+    "scatter": [
+      "scatter.angle",
+      "scatter.radius_fraction",
+      "scatter.modulation",
+      "scatter.phase",
+      "scatter.aspect"
+    ],
+    "clusters": [
+      "clusters.count",
+      "clusters.angle",
+      "clusters.radius_fraction",
+      "clusters.spread_fraction",
+      "clusters.offset_x",
+      "clusters.offset_y"
+    ],
+    "caverns": [
+      "caverns.spread_fraction",
+      "caverns.offset_x",
+      "caverns.offset_y"
+    ],
+    "winding": [
+      "winding.nodes",
+      "winding.length_fraction",
+      "winding.frequency",
+      "winding.phase",
+      "winding.amplitude_fraction",
+      "winding.backbone_rooms",
+      "winding.backbone_room_index",
+      "winding.branches",
+      "winding.branch_start_index",
+      "winding.branch_angle",
+      "winding.branch_length_fraction",
+      "winding.bend_x_fraction",
+      "winding.bend_y_fraction"
+    ],
+    "branches": [
+      "branches.count",
+      "branches.angle_jitter",
+      "branches.segments",
+      "branches.turn",
+      "branches.length_fraction",
+      "branches.bend_x_fraction",
+      "branches.bend_y_fraction"
+    ],
+    "loops": [
+      "loops.count",
+      "loops.center_x_fraction",
+      "loops.center_y_fraction",
+      "loops.vertices",
+      "loops.radius_fraction",
+      "loops.modulation",
+      "loops.harmonics",
+      "loops.phase",
+      "loops.aspect",
+      "loops.rooms",
+      "loops.room_vertex_index"
+    ],
+    "graph": [
+      "graph.weight_multiplier"
+    ],
+    "paths": [
+      "paths.width_multiplier",
+      "paths.bend_fraction",
+      "paths.smooth",
+      "paths.smoothing_rounds"
+    ],
+    "fit": [
+      "fit.rotation",
+      "fit.span_fraction",
+      "fit.translation_x_fraction",
+      "fit.translation_y_fraction"
+    ]
+  },
+  "coordinate_contract": "Placement uses world units unless coordinates=normalized; family offsets are planar. Angles are radians except template.rotation and fit.rotation, which use degrees. Fields ending in _fraction are dimensionless. Template radius and cluster/cavern offsets use pre-fit world units.",
+  "scopes": "Counts and overall fitting per layout; template dimensions per room; path controls per path; vertex factors per vertex.",
+  "placement_laws": [
+    "independent",
+    "fixed",
+    "uniform",
+    "gaussian (std or covariance)",
+    "mixture",
+    "family (offset law)"
+  ],
+  "additional_geometric_parameters": {
+    "world": [
+      "world_size per axis",
+      "resolution per axis",
+      "curve_tolerance",
+      "floors",
+      "family",
+      "geometry"
+    ],
+    "rooms": [
+      "count",
+      "width",
+      "length",
+      "height",
+      "vertices",
+      "shape (2D)",
+      "orientation",
+      "placement",
+      "floor (3D)",
+      "elevation (3D)",
+      "radial_factor",
+      "rounded_radius_fraction",
+      "smooth_vertices",
+      "smooth_phase",
+      "smooth_amplitude_3",
+      "smooth_amplitude_5"
+    ],
+    "corridors": [
+      "width",
+      "path_width",
+      "minimum_achieved_width",
+      "loop_fraction",
+      "smoothing_rounds (2D curvilinear)"
+    ],
+    "obstacles": [
+      "type",
+      "count",
+      "radius",
+      "width",
+      "length",
+      "height",
+      "vertices",
+      "clearance",
+      "corridor_clearance (3D)",
+      "obstacle_clearance (3D)",
+      "placement",
+      "room_index",
+      "corridor_index",
+      "boundary_axis",
+      "boundary_fraction",
+      "radial_factor",
+      "rounded_radius_fraction",
+      "smooth_vertices",
+      "smooth_phase",
+      "smooth_amplitude_3",
+      "smooth_amplitude_5"
+    ]
+  },
+  "limits": "Seed, dimension, adjacency, retry budgets and numerical certificate rules are fixed experiment/validation settings. 3D curvilinear rooms are axis-aligned ellipsoids; yaw must be a multiple of 90 degrees. Family counts govern passage-first room populations. Acceptance and distinct-index selection condition requested laws. Existing configurations without layout or room placement keep the archived layout path.",
+  "integer_gaussian_contract": "normal/gaussian integer draws round nearest (half ties away from zero); optional min/max reject rounded values outside integer bounds. truncated_normal truncates continuous draws before rounding. Other fractional integer draws remain errors."
+}

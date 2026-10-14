@@ -1,0 +1,157 @@
+{
+  "dimension": 2,
+  "geometry": "polygonal",
+  "family": "room_clusters",
+  "seed": 304,
+  "world_size": [
+    50,
+    50
+  ],
+  "resolution": [
+    80,
+    80
+  ],
+  "neighbors": 4,
+  "max_attempts": 30,
+  "rooms": {
+    "count": [
+      8,
+      12
+    ],
+    "placement": {
+      "type": "mixture",
+      "components": [
+        {
+          "type": "gaussian",
+          "mean": [
+            18,
+            18
+          ],
+          "covariance": [
+            [
+              12,
+              3
+            ],
+            [
+              3,
+              12
+            ]
+          ]
+        },
+        {
+          "type": "gaussian",
+          "mean": [
+            33,
+            33
+          ],
+          "std": [
+            3,
+            3
+          ]
+        }
+      ],
+      "weights": [
+        1,
+        2
+      ]
+    },
+    "width": [
+      6,
+      9
+    ],
+    "length": [
+      7,
+      11
+    ],
+    "vertices": [
+      5,
+      9
+    ],
+    "orientation": [
+      -30,
+      30
+    ],
+    "radial_factor": [
+      0.75,
+      1
+    ]
+  },
+  "layout": {
+    "fit_mode": "none",
+    "parameters": {
+      "paths.bend_fraction": [
+        -0.12,
+        0.12
+      ],
+      "paths.width_multiplier": [
+        0.9,
+        1.1
+      ],
+      "paths.smooth": 0,
+      "graph.weight_multiplier": [
+        0.8,
+        1.2
+      ],
+      "clusters.count": [
+        2,
+        3
+      ]
+    }
+  },
+  "corridors": {
+    "width": [
+      4.8,
+      5.5
+    ],
+    "path_width": [
+      4.8,
+      5.5
+    ],
+    "minimum_achieved_width": 4.5,
+    "loop_fraction": [
+      0.1,
+      0.4
+    ]
+  },
+  "obstacles": [
+    {
+      "type": "convex_polygon",
+      "count": [
+        1,
+        2
+      ],
+      "radius": [
+        0.4,
+        0.65
+      ],
+      "vertices": [
+        4,
+        7
+      ],
+      "clearance": [
+        0.5,
+        0.8
+      ],
+      "placement": {
+        "type": "gaussian",
+        "mean": [
+          25,
+          25
+        ],
+        "covariance": [
+          [
+            60,
+            15
+          ],
+          [
+            15,
+            60
+          ]
+        ]
+      }
+    }
+  ],
+  "constraints": {
+    "connected": true
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "dimension": 2,
+  "geometry": "polygonal",
+  "family": "scattered_rooms",
+  "seed": 104,
+  "world_size": [
+    50,
+    50
+  ],
+  "resolution": [
+    80,
+    80
+  ],
+  "neighbors": 4,
+  "max_attempts": 30,
+  "rooms": {
+    "count": {
+      "distribution": "normal",
+      "mean": 8.5,
+      "std": 1,
+      "min": 7,
+      "max": 10
+    },
+    "placement": {
+      "type": "independent",
+      "x": {
+        "distribution": "truncated_normal",
+        "mean": 25,
+        "std": 6,
+        "min": 12,
+        "max": 38
+      },
+      "y": {
+        "distribution": "truncated_normal",
+        "mean": 25,
+        "std": 6,
+        "min": 12,
+        "max": 38
+      }
+    },
+    "width": {
+      "distribution": "truncated_normal",
+      "mean": 7.5,
+      "std": 0.75,
+      "min": 6,
+      "max": 9
+    },
+    "length": {
+      "distribution": "truncated_normal",
+      "mean": 9,
+      "std": 1,
+      "min": 7,
+      "max": 11
+    },
+    "vertices": {
+      "distribution": "normal",
+      "mean": 7,
+      "std": 1,
+      "min": 5,
+      "max": 9
+    },
+    "orientation": {
+      "distribution": "truncated_normal",
+      "mean": 0,
+      "std": 10,
+      "min": -30,
+      "max": 30
+    },
+    "radial_factor": {
+      "distribution": "truncated_normal",
+      "mean": 0.875,
+      "std": 0.04,
+      "min": 0.75,
+      "max": 1
+    }
+  },
+  "layout": {
+    "fit_mode": "none",
+    "parameters": {
+      "paths.bend_fraction": [
+        -0.12,
+        0.12
+      ],
+      "paths.width_multiplier": [
+        0.9,
+        1.1
+      ],
+      "paths.smooth": 0,
+      "graph.weight_multiplier": [
+        0.8,
+        1.2
+      ]
+    }
+  },
+  "corridors": {
+    "width": [
+      4.8,
+      5.5
+    ],
+    "path_width": [
+      4.8,
+      5.5
+    ],
+    "minimum_achieved_width": 4.5,
+    "loop_fraction": [
+      0.1,
+      0.4
+    ]
+  },
+  "obstacles": [
+    {
+      "type": "convex_polygon",
+      "count": [
+        1,
+        2
+      ],
+      "radius": [
+        0.4,
+        0.65
+      ],
+      "vertices": [
+        4,
+        7
+      ],
+      "clearance": [
+        0.5,
+        0.8
+      ],
+      "placement": {
+        "type": "gaussian",
+        "mean": [
+          25,
+          25
+        ],
+        "covariance": [
+          [
+            60,
+            15
+          ],
+          [
+            15,
+            60
+          ]
+        ]
+      }
+    }
+  ],
+  "constraints": {
+    "connected": true
+  }
+}
