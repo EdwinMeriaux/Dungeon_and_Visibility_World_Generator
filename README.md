@@ -124,3 +124,20 @@ cargo test --locked --manifest-path rust/visibility_engine/Cargo.toml
 [GitHub Actions](.github/workflows/ci.yml) builds the engine, runs tests and
 checks fresh 2D/3D pipelines. Generated outputs, manuscripts, Overleaf bundles
 and research archives are excluded from Git.
+
+## Citation
+
+If you use this repository in your research, please cite the following paper:
+
+```bibtex
+@misc{meriaux2026dungeon,
+  title         = {Dungeon and Visibility World Generator},
+  author        = {M{\'e}riaux, Edwin and Lor{\'i}a, Antonio
+                   and Dudek, Gregory},
+  year          = {2026},
+  eprint        = {2610.19523},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2610.19523}
+}
+```
